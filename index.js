@@ -5,9 +5,19 @@ const app = express();
 app.set('view engine', 'ejs');
 
 // Routes
-app.get("/", (req, res) => {
-    res.render('principal/perfil');
+// app.get("/", (req, res) => {
+//     res.send('Teste');
+// })
+app.get("/:nome/:lang", (req, res) => {
+    var nome = req.params.nome;
+    var lang = req.params.lang;
+    res.render("index", {
+        nome: nome,
+        lang: lang,
+        empresa: "KLMTech"
+    })
 });
+
 
 // Server
 app.listen(8000, (erro) => {
