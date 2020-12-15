@@ -7,7 +7,11 @@ app.use(express.static('public'));
 
 // Routes
 app.get("/", (req, res) => {
-    res.render("index")
+    res.render("index");
+});
+
+app.get("/perguntar", (req, res) => {
+    res.render("perguntar");
 });
 
 // Server
