@@ -5,16 +5,15 @@ const app = express();
 app.set('view engine', 'ejs');
 
 // Routes
-// app.get("/", (req, res) => {
-//     res.send('Teste');
-// })
 app.get("/:nome/:lang", (req, res) => {
     var nome = req.params.nome;
     var lang = req.params.lang;
+    var exibirMsg = false;
     res.render("index", {
         nome: nome,
         lang: lang,
-        empresa: "KLMTech"
+        empresa: "KLMTech",
+        msg: exibirMsg
     })
 });
 
